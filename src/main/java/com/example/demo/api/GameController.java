@@ -31,11 +31,15 @@ public class GameController {
             "https://api.multiavatar.com/7a211bab580165a19d.svg"
     );
 
+    private String currentAction;
+
     @MessageMapping("/start")
     @SendTo("/game")
     public Game processMessage(Game game) {
-        System.out.println("game = " + game);
-        globalGame.setAction(game.getAction());
+        System.out.println(game.getAction());
+        if (!game.getAction().equals("START_MENU")) {
+            globalGame.setAction(game.getAction());
+        }
         switch (game.getAction()) {
             case "USER" -> globalGame.getUsers().add(User.builder()
                     .avatar(avatars.get(globalGame.getUsers().size()))
@@ -57,6 +61,8 @@ public class GameController {
                 globalGame.getUsers().forEach(user -> user.setAnswer(null));
                 globalGame.setCurrentQuestion(globalGame.getCurrentQuestion() + 1);
             }
+            case "SHOW_ANSWERS", "SHOW_RESULTS" -> currentAction = game.getAction();
+            case "START_MENU" -> globalGame.setAction(currentAction);
         }
         return globalGame;
     }
