@@ -1,8 +1,8 @@
 package com.example.demo.service;
 
+import com.example.demo.dto.Round;
 import com.example.demo.entity.Game;
 import com.example.demo.entity.Question;
-import com.example.demo.entity.Round;
 import com.example.demo.entity.Screen;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +25,55 @@ public class GameService {
                 UUID.randomUUID().toString(),
                 "Новая игра",
                 Arrays.asList(
-                        Round.builder().title("Откуда трек?").type(ROUND).timer(TIMER).build(),
+                        // первый раунд
+                        Question.builder().questionType("video").text("Что было дальше?").video("IzjoDZ_vb9E").start(0).duration(26).answerVariants(List.of("Холодненькая", "Заебись вода", "А где Вован?")).rightAnswer("Заебись вода").type(QUESTION).build(),
+                        Question.builder().questionType("video").text("Что было дальше?").video("IzjoDZ_vb9E").start(26).duration(22).answerVariants(List.of("Холодненькая", "Заебись вода", "А где Вован?")).rightAnswer("Заебись вода").type(ANSWER).build(),
+
+                        Question.builder().questionType("video").text("Что было дальше?").video("siJDYhunYbM").start(208).duration(28).answerVariants(List.of("Никогда не разучишься", "Я в порядке", "Вы видели? Эта тачка вылетела на меня из ниоткуда")).rightAnswer("Никогда не разучишься").type(QUESTION).build(),
+                        Question.builder().questionType("video").text("Что было дальше?").video("siJDYhunYbM").start(236).duration(5).answerVariants(List.of("Никогда не разучишься", "Я в порядке", "Вы видели? Эта тачка вылетела на меня из ниоткуда")).rightAnswer("Никогда не разучишься").type(ANSWER).build(),
+
+                        Question.builder().questionType("video").text("Что было дальше?").video("siJDYhunYbM").start(742).duration(105).answerVariants(List.of("Это было круто", "Все таки один мячик уронил", "Ни одного мячика не уронил")).rightAnswer("Ни одного мячика не уронил").type(QUESTION).build(),
+                        Question.builder().questionType("video").text("Что было дальше?").video("siJDYhunYbM").start(847).duration(3).answerVariants(List.of("Это было круто", "Все таки один мячик уронил", "Ни одного мячика не уронил")).rightAnswer("Ни одного мячика не уронил").type(ANSWER).build(),
+
+                        Question.builder().questionType("video").text("Что было дальше?").video("wLCfkCkDMlw").start(322).duration(43).answerVariants(List.of("Снимет штаны", "Обкардет всех", "Все останутся без штанов")).rightAnswer("Снимет штаны").type(QUESTION).build(),
+                        Question.builder().questionType("video").text("Что было дальше?").video("wLCfkCkDMlw").start(365).duration(19).answerVariants(List.of("Снимет штаны", "Обкардет всех", "Все останутся без штанов")).rightAnswer("Снимет штаны").type(ANSWER).build(),
+
+                        Question.builder().questionType("video").text("Что было дальше?").video("W1NgTYCnwVM").start(56).duration(6).answerVariants(List.of("За вами", "Домой", "Воевать")).rightAnswer("Домой").type(QUESTION).build(),
+                        Question.builder().questionType("video").text("Что было дальше?").video("W1NgTYCnwVM").start(62).duration(2).answerVariants(List.of("За вами", "Домой", "Воевать")).rightAnswer("Домой").type(ANSWER).build(),
+
+                        Screen.builder().type(RESULTS).build(),
+
+                        Question.builder().questionType("video").text("Что было дальше?").video("ggzMrfuCik8").start(39).duration(7).answerVariants(List.of("Сердце хочет поздравить, а душа нет", "Хочется поздравить, но кто бы поздравил меня", "Поздавляю конечно их, но не от всего сердца")).rightAnswer("Поздавляю конечно их, но не от всего сердца").type(QUESTION).build(),
+                        Question.builder().questionType("video").text("Что было дальше?").video("ggzMrfuCik8").start(46).duration(33).answerVariants(List.of("Сердце хочет поздравить, а душа нет", "Хочется поздравить, но кто бы поздравил меня", "Поздавляю конечно их, но не от всего сердца")).rightAnswer("Поздавляю конечно их, но не от всего сердца").type(ANSWER).build(),
+
+                        Question.builder().questionType("video").text("Что было дальше?").video("N7SklXvhxMc").start(0).duration(52).answerVariants(List.of("Дождик-хуеждик", "Мишура-хуера", "Шарики-хуярики")).rightAnswer("Дождик-хуеждик").type(QUESTION).build(),
+                        Question.builder().questionType("video").text("Что было дальше?").video("N7SklXvhxMc").start(52).duration(6).answerVariants(List.of("Дождик-хуеждик", "Мишура-хуера", "Шарики-хуярики")).rightAnswer("Дождик-хуеждик").type(ANSWER).build(),
+
+                        Question.builder().questionType("video").text("Что было дальше?").video("DhLLF6cAn-s").start(0).duration(34).answerVariants(List.of("Я слово вам даю что будет 27го", "Ну что вы пристали с этой дорогой", "Я обещание дал, значит я его сдержу")).rightAnswer("Ну что вы пристали с этой дорогой").type(QUESTION).build(),
+                        Question.builder().questionType("video").text("Что было дальше?").video("DhLLF6cAn-s").start(34).duration(16).answerVariants(List.of("Я слово вам даю что будет 27го", "Ну что вы пристали с этой дорогой", "Я обещание дал, значит я его сдержу")).rightAnswer("Ну что вы пристали с этой дорогой").type(ANSWER).build(),
+
+                        Question.builder().questionType("video").text("Что было дальше?").video("BEEv9Am3ytI").start(47).duration(17).answerVariants(List.of("Алло Руслан подъедь пожалуйста", "Мам забери меня", "Русик, позвони Паше ФСБшнику пусть подъедет")).rightAnswer("Алло Руслан подъедь пожалуйста").type(QUESTION).build(),
+                        Question.builder().questionType("video").text("Что было дальше?").video("BEEv9Am3ytI").start(64).duration(10).answerVariants(List.of("Алло Руслан подъедь пожалуйста", "Мам забери меня", "Русик, позвони Паше ФСБшнику пусть подъедет")).rightAnswer("Алло Руслан подъедь пожалуйста").type(ANSWER).build(),
+
+                        Screen.builder().type(RESULTS).build(),
+
+                        Question.builder().questionType("video").text("Что было дальше?").video("YSsKw8gRVlY").start(0).duration(5).answerVariants(List.of("Смотреть не все лишь только могут", "Вернее не все могут смотреть", "Вернее смотреть могут не только лишь все")).rightAnswer("Вернее смотреть могут не только лишь все").type(QUESTION).build(),
+                        Question.builder().questionType("video").text("Что было дальше?").video("YSsKw8gRVlY").start(5).duration(5).answerVariants(List.of("Смотреть не все лишь только могут", "Вернее не все могут смотреть", "Вернее смотреть могут не только лишь все")).rightAnswer("Вернее смотреть могут не только лишь все").type(ANSWER).build(),
+
+                        Question.builder().questionType("video").text("Что было дальше?").video("TVwvcGajoQg").start(0).duration(41).answerVariants(List.of("Я никогда не поеду в Китай какать на огороды", "Ты втираешь мне какую-то дичь", "Я не поеду срать в Китай")).rightAnswer("Я никогда не поеду в Китай какать на огороды").type(QUESTION).build(),
+                        Question.builder().questionType("video").text("Что было дальше?").video("TVwvcGajoQg").start(41).duration(4).answerVariants(List.of("Я никогда не поеду в Китай какать на огороды", "Ты втираешь мне какую-то дичь", "Я не поеду срать в Китай")).rightAnswer("Я никогда не поеду в Китай какать на огороды").type(ANSWER).build(),
+
+                        Question.builder().questionType("video").text("Что было дальше?").video("FJO_iCgftZk").start(0).duration(7).answerVariants(List.of("Успешный район, город Мечта, улица Счастливая дом 7", "Тоскливый район, город Грусть, проспекты Разочарования дом 13", "проспект Несбывшихся-надежд, город Судьба, улица Печальная 13/13")).rightAnswer("Тоскливый район, город Грусть, проспекты Разочарования дом 13").type(QUESTION).build(),
+                        Question.builder().questionType("video").text("Что было дальше?").video("FJO_iCgftZk").start(7).duration(13).answerVariants(List.of("Успешный район, город Мечта, улица Счастливая дом 7", "Тоскливый район, город Грусть, проспекты Разочарования дом 13", "проспект Несбывшихся-надежд, город Судьба, улица Печальная 13/13")).rightAnswer("Тоскливый район, город Грусть, проспекты Разочарования дом 13").type(ANSWER).build(),
+
+                        Question.builder().questionType("video").text("Что было дальше?").video("eh0gRBbALYk").start(0).duration(7).answerVariants(List.of("КГБ", "Полиция", "Аллах")).rightAnswer("КГБ").type(QUESTION).build(),
+                        Question.builder().questionType("video").text("Что было дальше?").video("eh0gRBbALYk").start(0).duration(7).answerVariants(List.of("КГБ", "Полиция", "Аллах")).rightAnswer("КГБ").type(ANSWER).build(),
+
+                        Screen.builder().type(RESULTS).build()
+
+
+
+                     /*   Round.builder().title("Откуда трек?").type(ROUND).timer(TIMER).build(),
                         Question.builder().questionType("audio").text("Откуда трек?").video("TtFqkLyR4TQ").start(813).answerVariants(List.of("Атака титанов", "Ведьмак", "Унесенные призраками", "Ходячий замок")).rightAnswer("Атака титанов").type(QUESTION).build(),
                         Question.builder().questionType("audio").text("Откуда трек?").video("TtFqkLyR4TQ").start(813).answerVariants(List.of("Атака титанов", "Ведьмак", "Унесенные призраками", "Ходячий замок")).rightAnswer("Атака титанов").type(ANSWER).build(),
 
@@ -125,7 +173,7 @@ public class GameService {
                         Question.builder().questionType("video").text("Что же это?").video("ojhXYcmTq7c").start(113).duration(6).answerVariants(List.of("Это рисунок ключика", "Карта", "Ключ к сундуку Дэйви Джонса", "То, что нужно открыть")).rightAnswer("Это рисунок ключика").type(ANSWER).build(),
 
                         Round.builder().title("Финальные результаты").type(ROUND).timer(TIMER).build(),
-                        Screen.builder().type(RESULTS).timer(TIMER).build()
+                        Screen.builder().type(RESULTS).timer(TIMER).build()*/
                 )
         );
         this.games = List.of(
