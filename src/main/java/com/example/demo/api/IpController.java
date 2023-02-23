@@ -16,14 +16,12 @@ public class IpController {
     @GetMapping("/ip")
     @CrossOrigin(origins = "http://localhost:3000")
     public Ip get() throws SocketException {
-        System.out.println("GET IP");
         Enumeration<NetworkInterface> e = NetworkInterface.getNetworkInterfaces();
         while (e.hasMoreElements()) {
             NetworkInterface n = e.nextElement();
             Enumeration<InetAddress> ee = n.getInetAddresses();
             while (ee.hasMoreElements()) {
                 InetAddress i = ee.nextElement();
-                System.out.println("ip = " + i.getHostAddress());
                 if (i.getHostAddress().startsWith("192.168.")) {
                     return new Ip(i.getHostAddress());
                 }

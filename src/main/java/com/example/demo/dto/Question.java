@@ -5,17 +5,16 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Question {
-    private Integer number;
-    private Boolean showResults;
-    private String id;
+    private String videoId;
     private String answer;
+    private List<String> answers;
     private Integer start;
-    private Integer duration;
-    private Integer afterDuration;
-    private Round round;
+    private Integer end;
 }

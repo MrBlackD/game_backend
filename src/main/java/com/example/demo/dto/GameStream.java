@@ -9,8 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Round {
-    private Integer number;
-    private String header;
-    private String body;
+public class GameStream {
+    private Question question = new Question();
+    private Action action;
+    private Round round;
 }
